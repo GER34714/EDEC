@@ -815,3 +815,65 @@ input:focus,select:focus{
     width:100%;
   }
 }
+/* === VIDRIERA: mostrar TODO el contenido (sin cortes) === */
+
+/* Título completo */
+.card h3{
+  display:block !important;
+  -webkit-line-clamp:unset !important;
+  overflow:visible !important;
+  white-space:normal !important;
+  word-break:break-word;
+}
+
+/* Descripción completa */
+.desc{
+  display:block !important;
+  -webkit-line-clamp:unset !important;
+  overflow:visible !important;
+  min-height:0 !important;
+  white-space:normal !important;
+  word-break:break-word;
+}
+
+/* === FIX: que el botón "Agregar" no se corte === */
+.card .row{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;                 /* permite que baje si no entra */
+}
+
+/* acciones (stepper + botón) con wrap y sin “corte” */
+.card .actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:1 1 260px;                 /* más ancho para que entre el botón */
+  justify-content:flex-end;
+  min-width:260px;
+}
+
+/* botón siempre visible */
+.card .add{
+  flex:1 1 160px;
+  min-width:160px;
+  white-space:nowrap;
+}
+
+/* responsive: apilar cuando el ancho no da */
+@media (max-width: 980px){
+  .card .actions{
+    flex:1 1 100%;
+    width:100%;
+    justify-content:space-between;
+  }
+}
+@media (max-width: 520px){
+  .card .actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .card .add{ width:100%; }
+}
