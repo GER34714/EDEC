@@ -877,3 +877,75 @@ input:focus,select:focus{
   }
   .card .add{ width:100%; }
 }
+/* =========================
+   VIDRIERA PRO: cards legibles y ordenadas
+   ========================= */
+
+/* 1) Grilla responsive por ancho mínimo (evita cards angostas que rompen títulos) */
+.subgrid{
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+}
+
+/* 2) En el "top" apilamos: título arriba, pill abajo */
+.card .top{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  gap:8px !important;
+}
+
+/* 3) Título legible, sin cortes raros */
+.card h3{
+  width:100% !important;
+  margin:0 !important;
+  font-size:15px !important;
+  line-height:1.25 !important;
+  white-space:normal !important;
+  word-break:normal !important;
+  overflow-wrap:break-word !important;
+  hyphens:auto !important;
+}
+
+/* 4) Pill/categoría: que no robe ancho al título */
+.pill{
+  max-width:100% !important;
+  white-space:normal !important;
+  line-height:1.2 !important;
+}
+
+/* 5) Descripción completa, prolija */
+.desc{
+  white-space:normal !important;
+  word-break:normal !important;
+  overflow-wrap:break-word !important;
+  line-height:1.45 !important;
+}
+
+/* 6) Acciones: que el botón "Agregar" no se corte nunca */
+.card .row{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  gap:12px !important;
+  align-items:flex-end !important;
+}
+.card .actions{
+  display:flex !important;
+  gap:10px !important;
+  flex:1 1 260px !important;
+  min-width:260px !important;
+  justify-content:flex-end !important;
+}
+.card .add{
+  flex:1 1 160px !important;
+  min-width:160px !important;
+  white-space:nowrap !important;
+}
+
+/* Mobile: apilar acciones para lectura perfecta */
+@media (max-width: 520px){
+  .card .actions{
+    flex-direction:column !important;
+    align-items:stretch !important;
+  }
+  .card .add{ width:100% !important; }
+}
