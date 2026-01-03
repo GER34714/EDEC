@@ -491,7 +491,9 @@ function productCard(p){
 
   const desc = document.createElement("p");
   desc.className = "desc";
-  desc.textContent = p.descripcion || "Descripción breve del producto.";
+  const _d = (p.descripcion ?? "").toString().trim();
+  desc.textContent = _d;
+  if(!_d) desc.style.display = "none";
 
   const row = document.createElement("div");
   row.className = "row";
