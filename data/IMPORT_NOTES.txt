@@ -1,0 +1,17 @@
+CATÁLOGO GENERADO DESDE EXCEL (SIN BACKEND)
+
+1) PÁGINAS:
+- data/index.json: índice de categorías y tamaño de página
+- data/pages/<categoria>/<subcategoria>/page-XXX.json: páginas del catálogo
+
+2) IMÁGENES:
+- Para asignar fotos por producto, colocar archivos en:
+  assets/products/<ID>.webp
+- El <ID> es el SKU generado:
+  - Casa Alberto: CA-<barcode>
+  - Librería Ale: LA-<codigo>
+
+Si la imagen no existe, se usa assets/placeholder.svg
+
+3) ACTUALIZAR:
+- Si cambian los Excel, se vuelve a regenerar esta carpeta data/ y el mapeo de imágenes.
