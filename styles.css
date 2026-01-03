@@ -764,3 +764,54 @@ input:focus,select:focus{
     min-height:calc(12.5px * 1.5 * 3);
   }
 }
+/* === FIX: que el botón "Agregar" no se corte en cards angostas === */
+
+/* La fila de precio+acciones debe poder envolver */
+.card .row{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;           /* CLAVE */
+}
+
+/* El bloque de acciones (stepper + botón) que no se salga */
+.card .actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:1 1 220px;          /* permite que baje si no entra */
+  justify-content:flex-end;
+  min-width:220px;         /* evita que se rompa raro */
+}
+
+/* Stepper que no se achique */
+.card .step{
+  flex:0 0 auto;
+}
+
+/* Botón que se estire y SIEMPRE se vea completo */
+.card .add{
+  flex:1 1 120px;          /* ocupa el resto */
+  min-width:120px;
+  white-space:nowrap;
+}
+
+/* En cards muy angostas: apilar acciones (stepper arriba, botón abajo) */
+@media (max-width: 980px){
+  .card .actions{
+    flex:1 1 100%;
+    width:100%;
+    justify-content:space-between;
+  }
+}
+
+@media (max-width: 520px){
+  .card .actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .card .add{
+    width:100%;
+  }
+}
