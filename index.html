@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6f1e7" />
+
+  <title>Catálogo Boutique | Pedido por WhatsApp</title>
+  <meta name="description" content="Catálogo online boutique: destacados, categorías, buscador y pedido por WhatsApp. Sin backend." />
+
+  <meta property="og:title" content="Catálogo Boutique | Pedido por WhatsApp" />
+  <meta property="og:description" content="Elegí productos, armá tu lista y pedí por WhatsApp. Simple, rápido y profesional." />
+  <meta property="og:image" content="https://iili.io/fjnJyAl.md.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="https://iili.io/fjnJyAl.md.png" alt="Logo" />
+        <div class="brand-text">
+          <strong id="brandName">Tu Emprendimiento</strong>
+          <span>Catálogo boutique · Pedido por WhatsApp</span>
+        </div>
+      </a>
+
+      <div class="top-actions">
+        <button class="cartbtn" id="btnOpenCart" type="button">
+          <span class="cartbtn-label">Carrito</span>
+          <span class="cartbtn-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="top">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="kicker">SELECCIÓN ONLINE</div>
+          <h1 class="hero-title">Elegí, armá tu pedido y te respondemos por WhatsApp</h1>
+          <p class="hero-sub">
+            Una web simple pero profesional: <b>destacados</b>, <b>categorías</b>, <b>buscador</b> y <b>carrito</b>.
+            Sin backend. El pedido llega con la lista armada para cerrar más rápido.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn primary" href="#destacados">Ver selección</a>
+            <a class="btn ghost" href="#catalogo">Ver catálogo</a>
+          </div>
+
+          <div class="hero-metas">
+            <div class="meta">
+              <div class="meta-title">Envío / Retiro</div>
+              <div class="meta-text">A coordinar por chat</div>
+            </div>
+            <div class="meta">
+              <div class="meta-title">Confirmación</div>
+              <div class="meta-text">Stock y variantes</div>
+            </div>
+            <div class="meta">
+              <div class="meta-title">Pago</div>
+              <div class="meta-text">Efectivo / Transferencia / MP</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="panel-head">
+            <img class="panel-logo" src="https://iili.io/fjnJyAl.md.png" alt="Logo hero" />
+            <div>
+              <div class="panel-title">Datos opcionales</div>
+              <div class="panel-sub">Para que tu pedido llegue más claro</div>
+            </div>
+          </div>
+
+          <div class="lead-grid">
+            <label class="field">
+              <span>Nombre</span>
+              <input id="qName" placeholder="Ej: Flor" />
+            </label>
+            <label class="field">
+              <span>Zona</span>
+              <input id="qZone" placeholder="Ej: San Miguel" />
+            </label>
+            <label class="field">
+              <span>Entrega</span>
+              <select id="qDelivery">
+                <option value="">Seleccionar…</option>
+                <option value="Envío a domicilio">Envío a domicilio</option>
+                <option value="Retiro por el local">Retiro por el local</option>
+                <option value="Coordinar">Coordinar</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Pago</span>
+              <select id="qPay">
+                <option value="">Seleccionar…</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Transferencia">Transferencia</option>
+                <option value="Mercado Pago">Mercado Pago</option>
+                <option value="Coordinar">Coordinar</option>
+              </select>
+            </label>
+          </div>
+
+          <button class="btn primary full" id="btnOpenCart2" type="button">Abrir carrito y enviar pedido</button>
+          <p class="note">
+            Tip: compartí este link en bio/historias. La gente entra, elige y te escribe con el pedido listo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolbox">
+      <div class="searchbar">
+        <input id="qSearch" placeholder="Buscar por nombre, código, categoría o subcategoría…" autocomplete="off" />
+        <button class="clear" id="btnClear" type="button">Limpiar</button>
+      </div>
+
+      <div class="filters">
+        <div class="filter-col">
+          <div class="filter-title">Categorías</div>
+          <div class="chips" id="chipsCats"></div>
+        </div>
+        <div class="filter-col">
+          <div class="filter-title">Subcategorías</div>
+          <div class="chips" id="chipsSubs"></div>
+        </div>
+      </div>
+
+      <div class="bar">
+        <div class="bar-left">
+          <div class="muted" id="resultsInfo">Cargando catálogo…</div>
+        </div>
+        <div class="bar-right">
+          <label class="muted" for="sortBy">Orden</label>
+          <select id="sortBy">
+            <option value="relevancia">Selección</option>
+            <option value="precio_asc">Precio: menor a mayor</option>
+            <option value="precio_desc">Precio: mayor a menor</option>
+            <option value="az">Nombre: A → Z</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="destacados">
+      <div class="section-head">
+        <div>
+          <h2>Selección destacada</h2>
+          <p class="muted">Una curaduría corta para aumentar pedidos sin fricción.</p>
+        </div>
+        <a class="link" href="#catalogo">Ver todo el catálogo →</a>
+      </div>
+
+      <div class="featured" id="gridFeatured"></div>
+      <div class="empty" id="emptyFeatured" style="display:none;">No hay destacados con los filtros actuales.</div>
+    </section>
+
+    <section class="section" id="catalogo">
+      <div class="section-head">
+        <div>
+          <h2>Catálogo completo</h2>
+          <p class="muted">Ordenado por categorías y subcategorías.</p>
+        </div>
+      </div>
+
+      <nav class="catnav" id="catNav"></nav>
+
+      <div class="catalog" id="catalogGroups"></div>
+
+      <div class="loadmore" id="loadMoreWrap" style="display:none;">
+        <button class="btn ghost full" id="btnLoadMore" type="button">Cargar más</button>
+      </div>
+      <div class="empty" id="emptyAll" style="display:none;">No se encontraron productos con esos filtros.</div>
+    </section>
+  </main><div class="sticky" id="stickyBar">
+    <div class="sticky-inner">
+      <button class="btn ghost full" id="btnStickyCatalog" type="button">Volver al catálogo</button>
+      <button class="btn primary full" id="btnStickyCart" type="button">Enviar pedido (WhatsApp)</button>
+    </div>
+  </div>
+
+  <a class="wa-float" id="waQuick" href="#" aria-label="WhatsApp">WA</a>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="drawer" aria-label="Carrito">
+    <div class="drawer-head">
+      <div class="drawer-title">
+        <div class="drawer-kicker">PEDIDO</div>
+        <strong>Tu carrito</strong>
+      </div>
+      <button class="close" id="btnCloseCart" type="button">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="cartlist" id="cartList"></div>
+    </div>
+
+    <div class="drawer-foot">
+      <div class="sumrow">
+        <span>Items</span>
+        <b id="sumItems">0</b>
+      </div>
+      <div class="sumrow">
+        <span>Total estimado</span>
+        <b id="sumTotal">$0</b>
+      </div>
+
+      <button class="btn primary full" id="btnSendWA" type="button">Enviar pedido por WhatsApp</button>
+      <button class="btn ghost full" id="btnClearCart" type="button">Vaciar carrito</button>
+
+      <p class="muted small">
+        El total es estimado. Se confirma stock, variantes y envío por chat.
+      </p>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="muted small">
+        <b id="footName">Tu Emprendimiento</b> · Catálogo boutique
+      </div>
+      <div class="small">
+        <a class="credit" href="https://ciborg347.onrender.com" target="_blank" rel="noopener">Creado y diseñado por Ciborg 347</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
