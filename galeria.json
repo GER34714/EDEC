@@ -1,0 +1,134 @@
+[
+  {
+    "id": "LIB-CUA-001",
+    "nombre": "Cuaderno A5 Tapa Dura",
+    "categoria": "Librería",
+    "subcategoria": "Cuadernos",
+    "precio": 5200,
+    "destacado": true,
+    "descripcion": "80 hojas, tapa dura. Ideal estudio/trabajo.",
+    "imagen": "https://picsum.photos/seed/cuaderno_a5/900/700",
+    "tags": ["a5", "tapa dura", "rayado"]
+  },
+  {
+    "id": "LIB-CUA-002",
+    "nombre": "Cuaderno A4 Rayado",
+    "categoria": "Librería",
+    "subcategoria": "Cuadernos",
+    "precio": 6900,
+    "destacado": false,
+    "descripcion": "A4, rayado, encuadernado reforzado.",
+    "imagen": "https://picsum.photos/seed/cuaderno_a4/900/700",
+    "tags": ["a4", "rayado"]
+  },
+  {
+    "id": "LIB-LAP-001",
+    "nombre": "Lápiz Negro HB (x12)",
+    "categoria": "Librería",
+    "subcategoria": "Lápices",
+    "precio": 4100,
+    "destacado": true,
+    "descripcion": "Pack x12, trazo suave, buena mina.",
+    "imagen": "https://picsum.photos/seed/lapiz_hb/900/700",
+    "tags": ["hb", "pack", "12"]
+  },
+  {
+    "id": "LIB-LAP-002",
+    "nombre": "Lapicera Gel Negra",
+    "categoria": "Librería",
+    "subcategoria": "Lápices",
+    "precio": 900,
+    "destacado": false,
+    "descripcion": "Secado rápido, trazo parejo.",
+    "imagen": "https://picsum.photos/seed/lapicera_gel/900/700",
+    "tags": ["gel", "negra"]
+  },
+  {
+    "id": "LIB-ART-001",
+    "nombre": "Set Marcadores 12u",
+    "categoria": "Librería",
+    "subcategoria": "Arte",
+    "precio": 8900,
+    "destacado": true,
+    "descripcion": "Colores vivos para lettering y dibujo.",
+    "imagen": "https://picsum.photos/seed/marcadores_12/900/700",
+    "tags": ["marcadores", "lettering"]
+  },
+  {
+    "id": "LIB-ART-002",
+    "nombre": "Acuarelas 12 colores",
+    "categoria": "Librería",
+    "subcategoria": "Arte",
+    "precio": 7600,
+    "destacado": false,
+    "descripcion": "Pastillas con pincel incluido.",
+    "imagen": "https://picsum.photos/seed/acuarelas/900/700",
+    "tags": ["acuarelas", "pintura"]
+  },
+  {
+    "id": "JUG-MUN-001",
+    "nombre": "Muñeca Clásica 30cm",
+    "categoria": "Juguetería",
+    "subcategoria": "Muñecas/os",
+    "precio": 18900,
+    "destacado": true,
+    "descripcion": "Muñeca 30cm, ropa intercambiable.",
+    "imagen": "https://picsum.photos/seed/muneca_30/900/700",
+    "tags": ["muñeca", "30cm"]
+  },
+  {
+    "id": "JUG-MUN-002",
+    "nombre": "Muñeco Articulado",
+    "categoria": "Juguetería",
+    "subcategoria": "Muñecas/os",
+    "precio": 15900,
+    "destacado": false,
+    "descripcion": "Articulaciones móviles, ideal colección.",
+    "imagen": "https://picsum.photos/seed/muneco_art/900/700",
+    "tags": ["articulado"]
+  },
+  {
+    "id": "JUG-PEL-001",
+    "nombre": "Pelota Fútbol N°5",
+    "categoria": "Juguetería",
+    "subcategoria": "Pelotas",
+    "precio": 12500,
+    "destacado": true,
+    "descripcion": "N°5, costura reforzada.",
+    "imagen": "https://picsum.photos/seed/pelota_futbol/900/700",
+    "tags": ["futbol", "n5"]
+  },
+  {
+    "id": "JUG-PEL-002",
+    "nombre": "Pelota Playa Inflable",
+    "categoria": "Juguetería",
+    "subcategoria": "Pelotas",
+    "precio": 6200,
+    "destacado": false,
+    "descripcion": "Liviana, ideal verano.",
+    "imagen": "https://picsum.photos/seed/pelota_playa/900/700",
+    "tags": ["playa", "inflable"]
+  },
+  {
+    "id": "JUG-AUT-001",
+    "nombre": "Auto a Fricción",
+    "categoria": "Juguetería",
+    "subcategoria": "Autos",
+    "precio": 7900,
+    "destacado": true,
+    "descripcion": "Tira y corre, resistente.",
+    "imagen": "https://picsum.photos/seed/auto_friccion/900/700",
+    "tags": ["auto", "friccion"]
+  },
+  {
+    "id": "JUG-AUT-002",
+    "nombre": "Camioncito Constructor",
+    "categoria": "Juguetería",
+    "subcategoria": "Autos",
+    "precio": 9900,
+    "destacado": false,
+    "descripcion": "Volqueta móvil, plástico duro.",
+    "imagen": "https://picsum.photos/seed/camioncito/900/700",
+    "tags": ["camion", "volqueta"]
+  }
+]
