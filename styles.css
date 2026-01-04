@@ -949,3 +949,83 @@ input:focus,select:focus{
   }
   .card .add{ width:100% !important; }
 }
+
+
+/* ===== Categorías (vista previa) ===== */
+.catpreview{
+  margin: 16px 0 6px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  background: rgba(255,255,255,.03);
+}
+.catpreview-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom: 10px;
+}
+.catpreview-head h3{
+  margin:0;
+  font-size: 16px;
+  letter-spacing: .2px;
+}
+.catpreview-head .muted{
+  margin:0;
+  font-size: 13px;
+}
+.catpreview-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+.catcard{
+  display:flex;
+  flex-direction:column;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 14px;
+  overflow:hidden;
+  background: rgba(0,0,0,.20);
+  cursor:pointer;
+  transition: transform .12s ease, border-color .12s ease, background .12s ease;
+  text-align:left;
+}
+.catcard:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.22);
+  background: rgba(0,0,0,.28);
+}
+.catcard.active{
+  border-color: rgba(255,255,255,.35);
+  background: rgba(255,255,255,.06);
+}
+.catcard img{
+  width:100%;
+  height: 110px;
+  object-fit: cover;
+  display:block;
+}
+.catcard-meta{
+  padding: 10px 10px 12px;
+  display:flex;
+  flex-direction:column;
+  gap: 4px;
+}
+.catcard-title{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.catcard-count{
+  font-size: 12px;
+  opacity: .72;
+}
+
+/* Mobile: tarjetas un poco más altas */
+@media (max-width: 520px){
+  .catcard img{ height: 120px; }
+  .catpreview{ padding: 12px; }
+}
+
