@@ -261,7 +261,6 @@ function buildIndexes(){
 
   buildSubChips();
   buildCatNav(cats.filter(x=>x!=="Todos"));
-  buildCategoryPreview();
 }
 
 function buildSubChips(){
@@ -307,71 +306,6 @@ function buildCatNav(cats){
     a.textContent = c;
     nav.appendChild(a);
   });
-
-function buildCategoryPreview(){
-  const wrap = document.getElementById("catPreviewGrid");
-  const box = document.getElementById("catPreview");
-  if(!wrap || !box) return;
-
-  // Si no hay índice, ocultamos la vista previa
-  if(!storeIndex || !Array.isArray(storeIndex.categories) || storeIndex.categories.length === 0){
-    box.style.display = "none";
-    return;
-  }
-  box.style.display = "";
-
-  wrap.innerHTML = "";
-  storeIndex.categories.forEach(cat=>{
-    const slug = cat.slug || safeId(cat.name);
-    const card = document.createElement("button");
-    card.type = "button";
-    card.className = "catcard" + (cat.name === activeCat ? " active" : "");
-    card.setAttribute("aria-label", `Filtrar por ${cat.name}`);
-
-    const img = document.createElement("img");
-    img.loading = "lazy";
-    img.alt = cat.name;
-    img.src = `assets/categories/${slug}.jpg`;
-    img.onerror = () => { img.src = "assets/placeholder.svg"; };
-
-    const meta = document.createElement("div");
-    meta.className = "catcard-meta";
-
-    const title = document.createElement("div");
-    title.className = "catcard-title";
-    title.textContent = cat.name;
-
-    const count = document.createElement("div");
-    count.className = "catcard-count";
-    count.textContent = (typeof cat.count === "number") ? `${cat.count} productos` : "";
-
-    meta.appendChild(title);
-    meta.appendChild(count);
-
-    card.appendChild(img);
-    card.appendChild(meta);
-
-    card.addEventListener("click", async ()=>{
-      if(cat.name === activeCat) {
-        document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth", block: "start" });
-        return;
-      }
-      activeCat = cat.name;
-      activeSub = "Todas";
-      buildSubChips();
-      syncChipActive();
-      buildCategoryPreview();
-      await resetAndLoadFirstPage();
-      applyFilters();
-      renderAll();
-      updatePagingUI();
-      document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-
-    wrap.appendChild(card);
-  });
-}
-
 }
 
 function applyFilters(){
